@@ -1,0 +1,39 @@
+query: SELECT * FROM current_schema()
+query: SELECT version();
+query: START TRANSACTION
+query: SELECT * FROM current_schema()
+query: SELECT * FROM current_database()
+query: SELECT "table_schema", "table_name", obj_description(('"' || "table_schema" || '"."' || "table_name" || '"')::regclass, 'pg_class') AS table_comment FROM "information_schema"."tables" WHERE ("table_schema" = 'public' AND "table_name" = 'user_details')
+query: SELECT * FROM "information_schema"."tables" WHERE "table_schema" = 'public' AND "table_name" = 'typeorm_metadata'
+query: SELECT "n"."nspname", "t"."typname" FROM "pg_type" "t" INNER JOIN "pg_namespace" "n" ON "n"."oid" = "t"."typnamespace" WHERE "n"."nspname" = 
+'public' AND "t"."typname" = 'user_details_status_enum'
+query: CREATE TYPE "public"."user_details_status_enum" AS ENUM('unverified', 'active', 'blocked')
+query: CREATE TABLE "user_details" ("userId" SERIAL NOT NULL, "name" character varying NOT NULL, "fullName" character varying NOT NULL, "username" character varying NOT NULL, "email" character varying NOT NULL, "password" character varying NOT NULL, "phone" character varying NOT NULL, "age" integer NOT NULL, "dateOfBirth" date, "profileImage" character varying, "gender" character varying NOT NULL, "resetPasswordExpires" TIMESTAMP, "status" 
+"public"."user_details_status_enum" NOT NULL DEFAULT 'active', CONSTRAINT "UQ_34071c8003531ced970246523e4" UNIQUE ("email"), CONSTRAINT "UQ_1c93ea34ca9f68d1248c3165558" UNIQUE ("phone"), CONSTRAINT "UQ_6cf971defa731d61f492bdfc8e3" UNIQUE ("email", "phone", "username"), CONSTRAINT "PK_5261d2468b1288b347d58e8b540" PRIMARY KEY ("userId"))
+query: COMMIT
+Database connected successfully!
+2024-11-20T16:23:26.975Z [INFO]: Request Body: 
+query: SELECT "User"."userId" AS "User_userId", "User"."name" AS "User_name", "User"."fullName" AS "User_fullName", "User"."username" AS "User_username", "User"."email" AS "User_email", "User"."password" AS "User_password", "User"."phone" AS "User_phone", "User"."age" AS "User_age", "User"."dateOfBirth" AS "User_dateOfBirth", "User"."profileImage" AS "User_profileImage", "User"."gender" AS "User_gender", "User"."resetPasswordExpires" AS "User_resetPasswordExpires", "User"."status" AS "User_status" FROM "user_details" "User" WHERE (("User"."email" = $1) AND ("User"."phone" = $2) AND ("User"."username" = $3)) LIMIT 1 -- PARAMETERS: ["nabeen2058@gmail.com","9845217529","Nabin123"]
+query: START TRANSACTION
+query: INSERT INTO "user_details"("name", "fullName", "username", "email", "password", "phone", "age", "dateOfBirth", "profileImage", "gender", "resetPasswordExpires", "status") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, DEFAULT, $9, DEFAULT, DEFAULT) RETURNING "userId", "status" -- PARAMETERS: ["Nabin","Nabin Thapa","Nabin123","nabeen2058@gmail.com","$2b$10$jvXeAg2BVpFn6PChof4ZGOXCFUMT08naPEkoMD0gHkdqdGfvN6xj.","9845217529",30,"1993-05-12","Male"]
+query: COMMIT
+
+INSERT INTO "user_table_console"("name", "FullName", "username", "email", "password", "phone", "DOB", "age", "img", "gender", "status") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, DEFAULT, $9, DEFAULT, DEFAULT) RETURNING "userId", "status" -- PARAMETERS: ["Nabin","Nabin Thapa","Nabin123","nabin@gmail.com","nabin123","9845217529","1993-05-12",30,"Male"];
+
+CREATE TABLE user_table_console(
+userId SERIAL primary key,
+name VARCHAR(100) NOT NULL,
+FullName VARCHAR(100) NOT NULL,
+username varchar(50) NOT NULL,
+email VARCHAR(50) UNIQUE NOT NULL,
+password VARCHAR(20) NOT NULL,
+phone VARCHAR(20) NOT NULL,
+DOB DATE,
+age INT,
+img VARCHAR(255),
+gender VARCHAR(20),
+status VARCHAR(20) DEFAULT 'active'
+
+);
+
+INSERT INTO "user_table_console" ("name", "fullname", "username", "email","password", "phone", "dob", "age", "img", "gender", "status") VALUES ('Nabin', 'Nabin Thapa', 'Nabin123', 'nabin@gmail.com', 'nabin123', '9845217529', '1993-05-12', 30, DEFAULT, 'Male', 'active')RETURNING "userid", "status";

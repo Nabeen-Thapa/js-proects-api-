@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",/* Use a modern target if runtime supports it. */
+    "module": "commonjs",/* Use CommonJS for Node.js compatibility. */
+   
+    "experimentalDecorators": true, /* Enable support for decorators. */
+    "emitDecoratorMetadata": true, /* Emit metadata for decorators (required for TypeORM). */
+    "esModuleInterop": true, /* Allow default imports from CommonJS modules. */
+    "moduleResolution": "node",/* Use Node.js style module resolution. */
+    "baseUrl": "./src",/* Base directory for resolving paths. */
+    "paths": {/* Custom aliasing for project folders. */
+      "@utils/*": ["./common/utils/*"],
+      "@controllers/*": ["./users/controllers/*"],
+      "@models/*": ["models/*"]
+    },
+    "strict": true,/* Enable strict type-checking. */
+    "skipLibCheck": true, /* Skip type-checking of declaration files. */
+    "sourceMap": true/* Enable source maps for debugging. */
+  },
+  "include": ["./src/**/*"], /* Include all TypeScript files in the `src` folder. */
+  "exclude": ["node_modules", "dist"]/* Exclude `node_modules` and compiled files. */
+}

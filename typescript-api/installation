@@ -1,0 +1,7 @@
+npm init -y
+npm install typescript --save-dev
+npx tsc --init
+npm install typescript @types/node @types/express @types/bcrypt --save-dev
+npm install typeorm reflect-metadata pg
+npm install typescript@latest
+npm install typeorm

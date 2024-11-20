@@ -1,0 +1,14 @@
+{
+  "name": "Nabin",
+  "fullName": "Nabin Thapa",
+  "username": "Nabin12",
+  "email": "nabin@gmail.com",
+  "password": "Nabin12",
+  "phone": "9845217599",
+  "age": 30,
+  "gender": "Male",
+  "status": "active",
+  "dateOfBirth": "1993-05-12",
+  "profileImage": null,
+  "resetPasswordExpires": "2024-12-31T23:59:59.000Z"
+}
