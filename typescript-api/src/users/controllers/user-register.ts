@@ -40,18 +40,31 @@ async function generateUniqueOtp(): Promise<string> {
 
   return otp; // Return the unique OTP
 }
+
+//email validation regex
+const isValidEmail = (email:string):boolean=>{
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  return emailRegex.test(email);
+}
+
 userRegister.post("/register", async (req: Request, res: Response): Promise<void> => {
-  const { email, phone, username, password, name, fullName, age, dateOfBirth, gender }: UserRegisterRequest = req.body;
+  const { email, phone, username,name, fullName, age, dateOfBirth, gender }: UserRegisterRequest = req.body;
   //logger.info("Request Body: ", req.body);
 
   try {
     const checkUserOnDB = dbDetails.getRepository(User);
-
     // Validate required fields
-    if (!email || !phone || !username || !password) {
+    if (!email || !phone || !username) {
       res.status(StatusCodes.BAD_REQUEST).json({ message: "Email, phone, username, and password are required." });
       return; // exit early
     }
+    
+
+    // Check if email format is valid
+    if (!isValidEmail(email)) {
+       res.status(StatusCodes.BAD_REQUEST).json({ message: "Invalid email format." });
+    }
+
 
     // Check if user already exists
     const isExistUser = await checkUserOnDB.findOne({
@@ -59,7 +72,7 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
     });
 
     if (isExistUser) {
-      res.status(StatusCodes.CONFLICT).json({ message: "User already exists!" });
+     res.status(StatusCodes.CONFLICT).json({ message: "User already exists!" });
       return; // exit early
     }
     //4-digit OTP
@@ -85,8 +98,30 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
       Please use this OTP within 1 hour to reset your password. If you did not request this, please ignore this email and your password will remain unchanged.\n`,
   };
   //send email with token
-  await transporter.sendMail(mailOptions);
-   res.status(StatusCodes.CREATED).json({ message: "email send successful" });
+  try {
+    await transporter.sendMail(mailOptions);
+  } catch (emailError) {
+    console.error("Email sending error:", emailError);
+  
+    // Check for specific email error conditions
+    if ((emailError as any).response) {
+      const response = (emailError as any).response;
+      if (response.includes('550') || response.includes('5.1.1')) {
+        res.status(StatusCodes.BAD_REQUEST).json({
+          message: `Address not found: The email ${email} is not valid.`,
+        });
+        return; // Exit early if the email is invalid
+      }
+    }
+  
+    // If email sending failed, return a generic error message
+    res.status(StatusCodes.BAD_REQUEST).json({
+      message: "Failed to send email. Please check the email address and try again.",
+    });
+    return; // Exit early
+  }
+  
+  
     // Create new user instance
     const newUser = checkUserOnDB.create({
       name,
@@ -104,7 +139,7 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
     await checkUserOnDB.save(newUser);
 
     // Send successful response
-    res.status(StatusCodes.CREATED).json({ message: "Registration successful" });
+    res.status(StatusCodes.CREATED).json({ message: "Registration successful check your eail for the password" });
   } catch (error) {
     console.error("Registration error:", error);
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: "An error occurred during registration." });
