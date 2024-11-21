@@ -6,8 +6,16 @@ import { dbDetails } from "../../common/db/DB_details";
 import nodeMailer from 'nodemailer';
 import bcrypt from 'bcrypt';
 import { authenticator } from 'otplib';
-const userRegister: Router = express.Router();
 const dataSource = dbDetails;
+const userRegister: Router = express.Router();
+
+import { createClient } from 'redis';
+const redisClient = createClient();
+// Connect to the Redis server
+redisClient.connect().catch((error) => {
+    console.error('Redis connection error:', error);
+});
+
 // Define the UserRegisterRequest interface to specify the expected structure of the request body
 interface UserRegisterRequest {
   name: string;
@@ -90,6 +98,7 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
       from: process.env.EMAIL,
       subject: 'password reset',
       text: `the password for your typescript api account.\n\n
+      your username:${username}\n
       Your OTP is: ${otp}\n\n
       Please use this OTP  to login or reset your password.\n`,
     };
@@ -109,15 +118,13 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
           return; // Exit early if the email is invalid
         }
       }
-
       // If email sending failed, return a generic error message
       res.status(StatusCodes.BAD_REQUEST).json({
         message: "Failed to send email. Please check the email address and try again.",
       });
       return; // Exit early
     }
-
-
+    
     // Create new user instance
     const newUser = checkUserOnDB.create({
       name,
