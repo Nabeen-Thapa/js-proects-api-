@@ -11,18 +11,19 @@ const app = express();
 app.use(express.json());
 
 dbDetails.initialize()
-.then(() => {
-  console.log("Database connected successfully!");
-})
-.catch((error) => {
-  console.error("Error during Data Source initialization:", error);
-});
-// Use the router for all /api routes
+  .then(() => {
+    logger.info("Database connected successfully!");
+  })
+  .catch((error) => {
+    logger.error("Error during Data Source initialization:", error);
+  });
+
+
+//router for all /api routes
 app.use('/api', apiUserRouter);
 
-// Set port from environment variable or fallback to default
-const apiPort = process.env.AppPort || 3200;
 
+const apiPort = process.env.AppPort || 3200;
 app.listen(apiPort, () => {
-    logger.info(`Server running on port ${apiPort}`);
+  logger.info(`Server running on port ${apiPort}`);
 });

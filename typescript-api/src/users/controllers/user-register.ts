@@ -4,9 +4,10 @@ import { User } from "../db/userTable";
 import logger from "../../common/utils/logger";
 import { dbDetails } from "../../common/db/DB_details";
 import nodeMailer from 'nodemailer';
-import bcrypt from 'bcrypt'; 
+import bcrypt from 'bcrypt';
 import { authenticator } from 'otplib';
-
+const userRegister: Router = express.Router();
+const dataSource = dbDetails;
 // Define the UserRegisterRequest interface to specify the expected structure of the request body
 interface UserRegisterRequest {
   name: string;
@@ -19,9 +20,7 @@ interface UserRegisterRequest {
   dateOfBirth: string;
   gender: string;
 }
-const userRegister: Router = express.Router();
-//opt generator
-const dataSource= dbDetails;
+
 
 async function generateUniqueOtp(): Promise<string> {
   let otp: string;
@@ -31,25 +30,25 @@ async function generateUniqueOtp(): Promise<string> {
   const userRepository = dataSource.getRepository(User);
 
   do {
-    otp = authenticator.generateSecret().slice(0, 4); // Generate a 4-digit OTP (as a string)
-    // Check if any user exists with the same OTP (in the password field or another field)
+    otp = authenticator.generateSecret().slice(0, 4); // Generate a 4-digit OTP 
+    // Check if any user exists with the same OTP 
     userWithSameOtp = await userRepository.findOne({
       where: { password: otp }, // Change "password" to the field where OTP is stored
     });
   } while (userWithSameOtp); // Repeat if OTP exists
 
-  return otp; // Return the unique OTP
+  return otp;
 }
 
 //email validation regex
-const isValidEmail = (email:string):boolean=>{
+const isValidEmail = (email: string): boolean => {
   const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return emailRegex.test(email);
 }
 
 userRegister.post("/register", async (req: Request, res: Response): Promise<void> => {
-  const { email, phone, username,name, fullName, age, dateOfBirth, gender }: UserRegisterRequest = req.body;
-  //logger.info("Request Body: ", req.body);
+  const { email, phone, username, name, fullName, age, dateOfBirth, gender }: UserRegisterRequest = req.body;
+  
 
   try {
     const checkUserOnDB = dbDetails.getRepository(User);
@@ -58,13 +57,11 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
       res.status(StatusCodes.BAD_REQUEST).json({ message: "Email, phone, username, and password are required." });
       return; // exit early
     }
-    
 
-    // Check if email format is valid
+    // validate email 
     if (!isValidEmail(email)) {
-       res.status(StatusCodes.BAD_REQUEST).json({ message: "Invalid email format." });
+      res.status(StatusCodes.BAD_REQUEST).json({ message: "Invalid email format." });
     }
-
 
     // Check if user already exists
     const isExistUser = await checkUserOnDB.findOne({
@@ -72,56 +69,55 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
     });
 
     if (isExistUser) {
-     res.status(StatusCodes.CONFLICT).json({ message: "User already exists!" });
+      res.status(StatusCodes.CONFLICT).json({ message: "User already exists!" });
       return; // exit early
     }
     //4-digit OTP
     const otp = await generateUniqueOtp();
     // Hash the password
     const hashedPassword = await bcrypt.hash(otp, 10);
-    // const hashedPassword = await bcrypt.hash(password, 10);
 
     //send email
     const transporter = nodeMailer.createTransport({
-      service : 'Gmail',
-        auth :{
-          user: process.env.EMAIL,
-          pass : process.env.EMAIL_PASSWORD, 
-        },
+      service: 'Gmail',
+      auth: {
+        user: process.env.EMAIL,
+        pass: process.env.EMAIL_PASSWORD,
+      },
     });
     const mailOptions = {
-      to :email,
-      from:process.env.EMAIL,
-      subject : 'password reset',
+      to: email,
+      from: process.env.EMAIL,
+      subject: 'password reset',
       text: `the password for your typescript api account.\n\n
       Your OTP is: ${otp}\n\n
-      Please use this OTP within 1 hour to reset your password. If you did not request this, please ignore this email and your password will remain unchanged.\n`,
-  };
-  //send email with token
-  try {
-    await transporter.sendMail(mailOptions);
-  } catch (emailError) {
-    console.error("Email sending error:", emailError);
-  
-    // Check for specific email error conditions
-    if ((emailError as any).response) {
-      const response = (emailError as any).response;
-      if (response.includes('550') || response.includes('5.1.1')) {
-        res.status(StatusCodes.BAD_REQUEST).json({
-          message: `Address not found: The email ${email} is not valid.`,
-        });
-        return; // Exit early if the email is invalid
+      Please use this OTP  to login or reset your password.\n`,
+    };
+    //send email with token
+    try {
+      await transporter.sendMail(mailOptions);
+    } catch (emailError) {
+      console.error("Email sending error:", emailError);
+
+      // Check for specific email error conditions
+      if ((emailError as any).response) {
+        const response = (emailError as any).response;
+        if (response.includes('550') || response.includes('5.1.1')) {
+          res.status(StatusCodes.BAD_REQUEST).json({
+            message: `Address not found: The email ${email} is not valid.`,
+          });
+          return; // Exit early if the email is invalid
+        }
       }
+
+      // If email sending failed, return a generic error message
+      res.status(StatusCodes.BAD_REQUEST).json({
+        message: "Failed to send email. Please check the email address and try again.",
+      });
+      return; // Exit early
     }
-  
-    // If email sending failed, return a generic error message
-    res.status(StatusCodes.BAD_REQUEST).json({
-      message: "Failed to send email. Please check the email address and try again.",
-    });
-    return; // Exit early
-  }
-  
-  
+
+
     // Create new user instance
     const newUser = checkUserOnDB.create({
       name,
