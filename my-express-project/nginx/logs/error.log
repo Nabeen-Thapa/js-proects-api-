@@ -1,0 +1,2 @@
+2024/11/16 18:03:47 [error] 14148#10360: *1 CreateFile() "E:\javascript learning\my-express-project\nginx/html/favicon.ico" failed (2: The system cannot find the file specified), client: 127.0.0.1, server: localhost, request: "GET /favicon.ico HTTP/1.1", host: "127.0.0.1", referrer: "http://127.0.0.1/"
+2024/11/16 18:18:17 [notice] 7996#7892: signal process started

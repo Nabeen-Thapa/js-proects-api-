@@ -1,0 +1,12 @@
+{
+  "name": "Test img",
+  "fullName": "Test img",
+  "email": "testimg@example.com",
+  "username": "img123",
+  "password": "img123", 
+  "phone": "8984567990",
+  "age": 25,
+  "dateOfBirth": "1999-10-27", 
+  "profileImage": "E:\javascript learning\Express other ss\middleware_daigram.png", 
+  "gender": "Female"
+}
