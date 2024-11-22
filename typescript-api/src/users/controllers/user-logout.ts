@@ -31,9 +31,9 @@ userLogout.post("/logout", async (req: Request, res: Response): Promise<void> =>
         if (deleteFromRedis) {
             const delResult = await redisClient.del(deleteFromRedis);
             if (delResult) {
-                logger.info(`Redis data for user ${redisData} removed successfully`);
+                logger.info(`Redis data for user removed successfully`);
             } else {
-                logger.info(`Failed to delete Redis data for user ${redisData}`);
+                logger.info(`Failed to delete Redis data for user `);
             }
         } else {
             logger.info("No matching Redis key found for the provided token");
