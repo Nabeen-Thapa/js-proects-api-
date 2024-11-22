@@ -1,0 +1,89 @@
+my express project 
+express api
+
+i have copmpletly make a express api using mongodb that:
+    - register users from html form and save to mongodb database,
+    - we can login from both html form and api test tools (like postman, thunder clien) and get the accress token and refresha token, 
+    - logout from api test tools by providing accress token
+    - get new accress token by porviding refresh token in header of api test tools,
+    -test user is authenticate or not by providing the access token
+
+    url's
+    -login :
+        type:post,
+        input url :http://localhost:3000/login
+        Select raw and set the format to JSON and 
+        input in body of api tool:
+        {
+            "username": "yourUsername",
+            "password": "yourPassword"
+        }
+
+        response:
+            success message
+            accesstoken : xxxxx.yyyyyy.zzzz,
+            refrshtoken: xxxxx.yyyyy.zzzzz
+
+    -to get new access token:
+        type:  post,
+        url http://localhost:3000/api/token
+        choose raw, json and
+        enter in body:
+        {
+            "token": "yourRefreshToken"
+        }
+        you will get new access token as response
+
+    -Testing Protected Endpoints authorized or not:
+        type: get
+        url : http://localhost:3000/api/home
+        go to header and add new key value:
+            key: Authorization
+            value : yourAccessToken
+
+            it will send your/user data whose accresstoken is provided in the header as value as response 
+    
+    -logout:
+    type: post
+    URL: http://localhost:3000/api/logout
+
+    select body, raw, json
+    and enter in the body:
+        {
+            "token": "yourRefreshToken"
+        }
+
+        it send logout successful message as response
+
+
+-forget password
+type :post
+url : http://localhost:3000/api/forget-password
+and in body part :
+{
+ "email" : "logged_in_user_email"
+}
+
+- change password
+type :post
+url : http://localhost:3000/api/change-password
+and in body part :
+{
+"email" : "logged_in_user_email",
+"oldPassword" : "users_old_passowrd",
+"newPassword" : "users_new_passowrd",
+"confirmPassword" : "users_new_passowrd_again"
+}
+
+for update detail
+method :PUT,
+url : http://localhost:3000/api/update-user
+and enter user detail in the body part
+
+for update post
+method : PUT,
+url : http://localhost:3000/api/update-post
+and enter post detail in the body part
+
+    
+
