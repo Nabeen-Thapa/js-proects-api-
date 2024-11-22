@@ -121,3 +121,81 @@
 2024-11-22T08:49:53.803Z [INFO]: Server running on port 3200
 2024-11-22T08:49:53.818Z [INFO]: connected to redis
 2024-11-22T08:49:54.107Z [INFO]: Database connected successfully!
+2024-11-22T11:26:12.818Z [INFO]: Server running on port 3200
+2024-11-22T11:26:12.831Z [INFO]: connected to redis
+2024-11-22T11:26:13.074Z [INFO]: Database connected successfully!
+2024-11-22T11:30:56.405Z [ERROR]: Registration error: WRONGTYPE Operation against a key holding the wrong kind of value
+2024-11-22T11:32:17.135Z [INFO]: Server running on port 3200
+2024-11-22T11:32:17.160Z [INFO]: connected to redis
+2024-11-22T11:32:17.431Z [INFO]: Database connected successfully!
+2024-11-22T11:32:28.067Z [ERROR]: logout error: WRONGTYPE Operation against a key holding the wrong kind of value
+2024-11-22T11:36:03.506Z [INFO]: Server running on port 3200
+2024-11-22T11:36:03.527Z [INFO]: connected to redis
+2024-11-22T11:36:03.792Z [INFO]: Database connected successfully!
+2024-11-22T11:36:28.501Z [INFO]: Server running on port 3200
+2024-11-22T11:36:28.526Z [INFO]: connected to redis
+2024-11-22T11:36:28.835Z [INFO]: Database connected successfully!
+2024-11-22T11:36:57.886Z [INFO]: Server running on port 3200
+2024-11-22T11:36:57.906Z [INFO]: connected to redis
+2024-11-22T11:36:58.179Z [INFO]: Database connected successfully!
+2024-11-22T11:37:04.617Z [INFO]: No matching Redis key found for the provided token
+2024-11-22T11:37:23.616Z [INFO]: No matching Redis key found for the provided token
+2024-11-22T11:38:47.964Z [INFO]: Server running on port 3200
+2024-11-22T11:38:47.978Z [INFO]: connected to redis
+2024-11-22T11:38:48.202Z [INFO]: Database connected successfully!
+2024-11-22T11:40:22.254Z [INFO]: No matching Redis key found for the provided token
+2024-11-22T11:42:18.963Z [INFO]: Server running on port 3200
+2024-11-22T11:42:18.984Z [INFO]: connected to redis
+2024-11-22T11:42:19.215Z [INFO]: Database connected successfully!
+2024-11-22T11:42:22.601Z [INFO]: No matching Redis key found for the provided token
+2024-11-22T11:57:15.322Z [INFO]: Server running on port 3200
+2024-11-22T11:57:15.344Z [INFO]: connected to redis
+2024-11-22T11:57:15.594Z [INFO]: Database connected successfully!
+2024-11-22T11:59:09.978Z [INFO]: Server running on port 3200
+2024-11-22T11:59:10.001Z [INFO]: connected to redis
+2024-11-22T11:59:10.260Z [INFO]: Database connected successfully!
+2024-11-22T11:59:18.239Z [INFO]: No matching Redis key found for the provided token
+2024-11-22T11:59:53.676Z [INFO]: No matching Redis key found for the provided token
+2024-11-22T12:00:31.614Z [ERROR]: Login error: data and hash arguments required
+2024-11-22T12:01:27.826Z [INFO]: Server running on port 3200
+2024-11-22T12:01:27.838Z [INFO]: connected to redis
+2024-11-22T12:01:28.034Z [INFO]: Database connected successfully!
+2024-11-22T12:01:44.033Z [INFO]: No matching Redis key found for the provided token
+2024-11-22T12:02:08.082Z [INFO]: No matching Redis key found for the provided token
+2024-11-22T12:04:51.674Z [INFO]: Server running on port 3200
+2024-11-22T12:04:51.699Z [INFO]: connected to redis
+2024-11-22T12:04:52.023Z [INFO]: Database connected successfully!
+2024-11-22T12:05:33.260Z [ERROR]: Login error: data and hash arguments required
+2024-11-22T12:06:04.367Z [INFO]: Server running on port 3200
+2024-11-22T12:06:04.379Z [INFO]: connected to redis
+2024-11-22T12:06:04.574Z [INFO]: Database connected successfully!
+2024-11-22T12:06:08.636Z [INFO]: No matching Redis key found for the provided token
+2024-11-22T12:09:38.838Z [INFO]: Server running on port 3200
+2024-11-22T12:09:38.885Z [INFO]: connected to redis
+2024-11-22T12:09:39.228Z [INFO]: Database connected successfully!
+2024-11-22T12:10:12.971Z [ERROR]: Login error: data and hash arguments required
+2024-11-22T12:10:43.664Z [INFO]: Server running on port 3200
+2024-11-22T12:10:43.676Z [INFO]: connected to redis
+2024-11-22T12:10:43.882Z [INFO]: Database connected successfully!
+2024-11-22T12:10:45.046Z [INFO]: Checking key: username:Nabin12, Stored token: {"userId":2,"userEmail":"nabin@gmail.com","username":"Nabin12","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik5hYmluMTIiLCJ1c2VySWQiOjIsInBhc3N3b3JkIjoiTmFiaW4xMiIsImlhdCI6MTczMjI3NzM5NCwiZXhwIjoxNzMyMjgwOTk0fQ.IMp5A6YfhMjhR4Jyhx5IjFKteJYj7cjGqyoieIhwdDY","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik5hYmluMTIiLCJ1c2VySWQiOjIsInBhc3N3b3JkIjoiTmFiaW4xMiIsImlhdCI6MTczMjI3NzM5NH0.OubTxoa_Xygu0AT1kys14ZA-M8s8qiHDIk8T9rT-A48"}
+2024-11-22T12:10:45.049Z [INFO]: No matching Redis key found for the provided token
+2024-11-22T12:12:55.889Z [INFO]: Server running on port 3200
+2024-11-22T12:12:55.946Z [INFO]: connected to redis
+2024-11-22T12:12:56.441Z [INFO]: Database connected successfully!
+2024-11-22T12:13:04.683Z [INFO]: No matching Redis key found for the provided token
+2024-11-22T12:13:52.178Z [INFO]: Checking redis key: username:Nabin12, Stored redis token: {"userId":2,"userEmail":"nabin@gmail.com","username":"Nabin12","accessToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik5hYmluMTIiLCJ1c2VySWQiOjIsInBhc3N3b3JkIjoiTmFiaW4xMiIsImlhdCI6MTczMjI3NzU5MywiZXhwIjoxNzMyMjgxMTkzfQ.9DeBUoYXk_b6vReX-mZouO87l0nHKOxnv-2a4JFdFSc","refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik5hYmluMTIiLCJ1c2VySWQiOjIsInBhc3N3b3JkIjoiTmFiaW4xMiIsImlhdCI6MTczMjI3NzU5M30.CqsdesMqHqnaft_uN2Rlcxt_6TYP14eWUYaLSSoPc9c"}
+2024-11-22T12:13:52.180Z [INFO]: No matching Redis key found for the provided token
+2024-11-22T12:18:43.483Z [INFO]: Server running on port 3200
+2024-11-22T12:18:43.509Z [INFO]: connected to redis
+2024-11-22T12:18:43.785Z [INFO]: Database connected successfully!
+2024-11-22T12:19:01.521Z [INFO]: Server running on port 3200
+2024-11-22T12:19:01.547Z [INFO]: connected to redis
+2024-11-22T12:19:01.961Z [INFO]: Database connected successfully!
+2024-11-22T12:19:46.413Z [INFO]: Checking redis key: username:Nabin12, Stored redis token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik5hYmluMTIiLCJ1c2VySWQiOjIsInBhc3N3b3JkIjoiTmFiaW4xMiIsImlhdCI6MTczMjI3Nzk2MX0.H0XARIg7j4d-Y9TwfWhVqi_Y8FIH8E0jyRKZ6HEAcdg
+2024-11-22T12:19:46.417Z [INFO]: Redis data for user username:Nabin12 removed successfully
+2024-11-22T12:24:31.472Z [INFO]: Server running on port 3200
+2024-11-22T12:24:31.510Z [INFO]: connected to redis
+2024-11-22T12:24:31.889Z [INFO]: Database connected successfully!
+2024-11-22T12:28:02.694Z [INFO]: Server running on port 3200
+2024-11-22T12:28:02.721Z [INFO]: connected to redis
+2024-11-22T12:28:03.007Z [INFO]: Database connected successfully!

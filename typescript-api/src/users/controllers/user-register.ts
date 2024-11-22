@@ -6,6 +6,7 @@ import { dbDetails } from "../../common/db/DB_details";
 import nodeMailer from 'nodemailer';
 import bcrypt from 'bcrypt';
 import { authenticator } from 'otplib';
+import userValidation from "./user-validation";
 const dataSource = dbDetails;
 const userRegister: Router = express.Router();
 
@@ -21,6 +22,7 @@ interface UserRegisterRequest {
   age: string;
   dateOfBirth: string;
   gender: string;
+  profileImage:string;
 }
 
 
@@ -49,8 +51,16 @@ const isValidEmail = (email: string): boolean => {
 }
 
 userRegister.post("/register", async (req: Request, res: Response): Promise<void> => {
-  const { email, phone, username, name, fullName, age, dateOfBirth, gender }: UserRegisterRequest = req.body;
-  
+  const { email, phone, username, name, fullName, age, dateOfBirth, profileImage,  gender }: UserRegisterRequest = req.body;
+  //user data validation using joi
+  const {error} = userValidation.validate(req.body);
+  if (error) {
+     res.status(StatusCodes.BAD_REQUEST).json({
+        message: "Validation failed",
+        details: error.details,
+      });
+      return;  // Return Joi error details
+}
 
   try {
     const checkUserOnDB = dbDetails.getRepository(User);
@@ -72,7 +82,7 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
 
     if (isExistUser) {
       res.status(StatusCodes.CONFLICT).json({ message: "User already exists!" });
-      return; // exit early
+      return; 
     }
     //4-digit OTP
     const otp = await generateUniqueOtp();
@@ -130,6 +140,7 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
       age: parseInt(age, 10),
       dateOfBirth,
       gender,
+      profileImage,
     });
 
     // Save the new user
@@ -142,5 +153,4 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: "An error occurred during registration." });
   }
 });
-
 export default userRegister;

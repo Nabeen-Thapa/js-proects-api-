@@ -55,7 +55,7 @@ export class User {
     phone: string,
     age: number,
     gender: string,
-    //status: "unverified" | "active" | "blocked",
+    status: "unverified" | "active" | "blocked",
     dateOfBirth?: Date,
     profileImage?: string,
     resetPasswordExpires?: Date
@@ -68,7 +68,7 @@ export class User {
     this.phone = phone;
     this.age = age;
     this.gender = gender;
-    //this.status = status;
+    this.status = status;
     this.dateOfBirth = dateOfBirth;
     this.profileImage = profileImage;
     this.resetPasswordExpires = resetPasswordExpires;
