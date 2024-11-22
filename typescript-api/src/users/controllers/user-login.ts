@@ -87,11 +87,9 @@ userLogin.post('/login',async (req:Request, res:Response):Promise<void>=>{
         if(isExistUserId){
              res.status(StatusCodes.OK).json({ message: "already logged in" });
              return; 
-        }else {
-            await getTOkens.create(userTokens);
         }
-
-
+       const newUserToken =  await getTOkens.create(userTokens);
+       await getTOkens.save(newUserToken);
         res.json({
             message: "login successfully",
             accessToken: accessToken,
