@@ -9,12 +9,6 @@ import { authenticator } from 'otplib';
 const dataSource = dbDetails;
 const userRegister: Router = express.Router();
 
-import { createClient } from 'redis';
-const redisClient = createClient();
-// Connect to the Redis server
-redisClient.connect().catch((error) => {
-    console.error('Redis connection error:', error);
-});
 
 // Define the UserRegisterRequest interface to specify the expected structure of the request body
 interface UserRegisterRequest {
@@ -144,7 +138,7 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
     // Send successful response
     res.status(StatusCodes.CREATED).json({ message: "Registration successful check your eail for the password" });
   } catch (error) {
-    console.error("Registration error:", error);
+    logger.error("Registration error:", error);
     res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: "An error occurred during registration." });
   }
 });
