@@ -9,8 +9,13 @@ const userValidation = Joi.object({
     phone: Joi.string().pattern(/^[0-9]{10}$/).required(),
     age: Joi.number().integer().min(10).max(120).required(), 
     dateOfBirth: Joi.date().optional(),
-    profileImage: Joi.string().optional(),
-    gender: Joi.string().valid('Male', 'Female', 'Other').optional()
+    profileImage: Joi.string().allow(null, '').optional(),
+    gender: Joi.string().valid('Male', 'Female', 'Other').optional(),
+    status: Joi.string()
+    .valid("unverified", "active", "blocked") // Match the enum values
+    .default("active") // Optional: Default to "active"
+    .optional(),
+    resetPasswordExpires: Joi.date().optional(), // Add this line
 });
 
 export default userValidation;
