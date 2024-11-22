@@ -20,6 +20,9 @@ export class Tokens {
     @Column({ type: "varchar", length: 255 })
     userEmail!: string;
 
+    @Column({ type: "varchar", length: 255 })
+    username!: string;
+    
     @Column({ type: "varchar", length: 512 })
     accessToken!: string;
 

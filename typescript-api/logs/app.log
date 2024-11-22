@@ -199,3 +199,48 @@
 2024-11-22T12:28:02.694Z [INFO]: Server running on port 3200
 2024-11-22T12:28:02.721Z [INFO]: connected to redis
 2024-11-22T12:28:03.007Z [INFO]: Database connected successfully!
+2024-11-22T17:59:53.524Z [INFO]: Server running on port 3200
+2024-11-22T17:59:53.538Z [INFO]: connected to redis
+2024-11-22T17:59:53.775Z [INFO]: Database connected successfully!
+2024-11-22T18:02:44.228Z [INFO]: Server running on port 3200
+2024-11-22T18:02:44.252Z [INFO]: connected to redis
+2024-11-22T18:02:44.551Z [INFO]: Database connected successfully!
+2024-11-22T18:06:32.846Z [INFO]: Server running on port 3200
+2024-11-22T18:06:32.877Z [INFO]: connected to redis
+2024-11-22T18:06:33.163Z [INFO]: Database connected successfully!
+2024-11-22T18:07:26.233Z [INFO]: Server running on port 3200
+2024-11-22T18:07:26.255Z [INFO]: connected to redis
+2024-11-22T18:07:26.514Z [INFO]: Database connected successfully!
+2024-11-22T18:08:53.015Z [INFO]: Server running on port 3200
+2024-11-22T18:08:53.046Z [INFO]: connected to redis
+2024-11-22T18:08:53.306Z [INFO]: Database connected successfully!
+2024-11-22T18:12:09.561Z [INFO]: Server running on port 3200
+2024-11-22T18:12:09.583Z [INFO]: connected to redis
+2024-11-22T18:12:09.833Z [INFO]: Database connected successfully!
+2024-11-22T18:13:15.505Z [INFO]: Server running on port 3200
+2024-11-22T18:13:15.526Z [INFO]: connected to redis
+2024-11-22T18:13:15.803Z [INFO]: Database connected successfully!
+2024-11-22T18:18:55.894Z [INFO]: Server running on port 3200
+2024-11-22T18:18:55.918Z [INFO]: connected to redis
+2024-11-22T18:18:56.246Z [INFO]: Database connected successfully!
+2024-11-22T18:23:49.816Z [INFO]: Server running on port 3200
+2024-11-22T18:23:49.838Z [INFO]: connected to redis
+2024-11-22T18:23:50.094Z [INFO]: Database connected successfully!
+2024-11-22T18:25:13.198Z [INFO]: No matching Redis key found for the provided token
+2024-11-22T18:30:01.198Z [ERROR]: change password error: Property "0" was not found in "Tokens". Make sure your query is correct.
+2024-11-22T18:34:45.551Z [ERROR]: change password error: Property "0" was not found in "Tokens". Make sure your query is correct.
+2024-11-22T18:38:47.456Z [INFO]: Server running on port 3200
+2024-11-22T18:38:47.484Z [INFO]: connected to redis
+2024-11-22T18:38:47.780Z [INFO]: Database connected successfully!
+2024-11-22T18:38:56.962Z [ERROR]: change password error: Property "0" was not found in "User". Make sure your query is correct.
+2024-11-22T18:41:32.719Z [INFO]: Server running on port 3200
+2024-11-22T18:41:32.741Z [INFO]: connected to redis
+2024-11-22T18:41:32.982Z [INFO]: Database connected successfully!
+2024-11-22T18:42:52.358Z [INFO]: Server running on port 3200
+2024-11-22T18:42:52.392Z [INFO]: connected to redis
+2024-11-22T18:42:52.613Z [INFO]: Database connected successfully!
+2024-11-22T18:43:28.848Z [ERROR]: Login error: Cannot set headers after they are sent to the client
+2024-11-22T18:43:59.837Z [INFO]: Server running on port 3200
+2024-11-22T18:43:59.853Z [INFO]: connected to redis
+2024-11-22T18:44:00.070Z [INFO]: Database connected successfully!
+2024-11-22T18:44:03.323Z [INFO]: Redis data for user removed successfully

@@ -22,7 +22,7 @@ interface UserRegisterRequest {
   age: string;
   dateOfBirth: string;
   gender: string;
-  profileImage:string;
+  profileImage: any;
 }
 
 
@@ -51,16 +51,16 @@ const isValidEmail = (email: string): boolean => {
 }
 
 userRegister.post("/register", async (req: Request, res: Response): Promise<void> => {
-  const { email, phone, username, name, fullName, age, dateOfBirth, profileImage,  gender }: UserRegisterRequest = req.body;
+  const { email, phone, username, name, fullName, age, dateOfBirth, profileImage, gender }: UserRegisterRequest = req.body;
   //user data validation using joi
-  const {error} = userValidation.validate(req.body);
+  const { error } = userValidation.validate(req.body);
   if (error) {
-     res.status(StatusCodes.BAD_REQUEST).json({
-        message: "Validation failed",
-        details: error.details,
-      });
-      return;  // Return Joi error details
-}
+    res.status(StatusCodes.BAD_REQUEST).json({
+      message: "Validation failed",
+      details: error.details.map((detail) => detail.message),
+    });
+    return;
+  }
 
   try {
     const checkUserOnDB = dbDetails.getRepository(User);
@@ -82,7 +82,7 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
 
     if (isExistUser) {
       res.status(StatusCodes.CONFLICT).json({ message: "User already exists!" });
-      return; 
+      return;
     }
     //4-digit OTP
     const otp = await generateUniqueOtp();
@@ -128,7 +128,7 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
       });
       return; // Exit early
     }
-    
+
     // Create new user instance
     const newUser = checkUserOnDB.create({
       name,
@@ -140,7 +140,7 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
       age: parseInt(age, 10),
       dateOfBirth,
       gender,
-      profileImage,
+      profileImage: profileImage || "", // Default to empty string if null or undefined    
     });
 
     // Save the new user

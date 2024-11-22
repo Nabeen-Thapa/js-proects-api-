@@ -61,7 +61,8 @@ userLogin.post('/login', async (req: Request, res: Response): Promise<void> => {
                 accessToken: accessToken,
                 refreshToken: refreshToken,
                 userEmail: userEmail,
-                userId: userId
+                userId: userId,
+                username:username
             }
             //store user data in redis
             await redisClient.set(`username:${username}`, JSON.stringify({

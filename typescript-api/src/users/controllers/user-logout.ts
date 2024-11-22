@@ -39,14 +39,14 @@ userLogout.post("/logout", async (req: Request, res: Response): Promise<void> =>
             logger.info("No matching Redis key found for the provided token");
         }
         //check in database token table
-        const getTOkenTable = dbDetails.getRepository(Tokens);
-        const isExistToken = await getTOkenTable.findOne({ where: { refreshToken: token } });
+        const getTokenTable = dbDetails.getRepository(Tokens);
+        const isExistToken = await getTokenTable.findOne({ where: { refreshToken: token } });
         if (!isExistToken) {
             res.status(StatusCodes.UNAUTHORIZED).json({ message: "you are not logged in" });
             return;
         }
         const userId = isExistToken.userId;
-        await getTOkenTable.delete({userId});
+        await getTokenTable.delete({userId});
         res.status(StatusCodes.OK).json({ message: "Logged out successfully" });
     } catch (error) {
         logger.error("logout error:", error);
