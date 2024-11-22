@@ -73,3 +73,51 @@
 2024-11-21T12:45:43.569Z [ERROR]: Login error: No metadata for "Tokens" was found.
 2024-11-21T12:47:18.932Z [INFO]: Server running on port 3200
 2024-11-21T12:47:19.224Z [INFO]: Database connected successfully!
+2024-11-22T06:07:23.236Z [INFO]: Server running on port 3200
+2024-11-22T06:07:23.247Z [INFO]: connected to redis
+2024-11-22T06:07:23.556Z [INFO]: Database connected successfully!
+2024-11-22T06:08:21.348Z [INFO]: Server running on port 3200
+2024-11-22T06:08:21.364Z [INFO]: connected to redis
+2024-11-22T06:08:21.584Z [INFO]: Database connected successfully!
+2024-11-22T06:08:24.317Z [ERROR]: Login error: WRONGTYPE Operation against a key holding the wrong kind of value
+2024-11-22T07:36:53.120Z [INFO]: Server running on port 3200
+2024-11-22T07:36:53.134Z [INFO]: connected to redis
+2024-11-22T07:36:53.441Z [INFO]: Database connected successfully!
+2024-11-22T07:49:30.637Z [ERROR]: Login error: WRONGTYPE Operation against a key holding the wrong kind of value
+2024-11-22T07:50:42.936Z [INFO]: Server running on port 3200
+2024-11-22T07:50:42.973Z [INFO]: connected to redis
+2024-11-22T07:50:43.243Z [INFO]: Database connected successfully!
+2024-11-22T07:53:55.551Z [INFO]: Server running on port 3200
+2024-11-22T07:53:55.568Z [INFO]: connected to redis
+2024-11-22T07:53:55.813Z [INFO]: Database connected successfully!
+2024-11-22T07:54:47.367Z [INFO]: Server running on port 3200
+2024-11-22T07:54:47.400Z [INFO]: connected to redis
+2024-11-22T07:54:47.634Z [INFO]: Database connected successfully!
+2024-11-22T07:55:10.267Z [INFO]: Server running on port 3200
+2024-11-22T07:55:10.297Z [INFO]: connected to redis
+2024-11-22T07:55:10.671Z [INFO]: Database connected successfully!
+2024-11-22T07:55:14.843Z [ERROR]: Login error: WRONGTYPE Operation against a key holding the wrong kind of value
+2024-11-22T07:59:05.443Z [INFO]: Server running on port 3200
+2024-11-22T07:59:05.488Z [INFO]: connected to redis
+2024-11-22T07:59:05.712Z [INFO]: Database connected successfully!
+2024-11-22T07:59:57.903Z [INFO]: Server running on port 3200
+2024-11-22T07:59:57.916Z [INFO]: connected to redis
+2024-11-22T07:59:58.048Z [INFO]: Database connected successfully!
+2024-11-22T08:23:28.689Z [INFO]: Server running on port 3200
+2024-11-22T08:23:28.719Z [INFO]: connected to redis
+2024-11-22T08:23:28.949Z [INFO]: Database connected successfully!
+2024-11-22T08:24:37.290Z [INFO]: Server running on port 3200
+2024-11-22T08:24:37.305Z [INFO]: connected to redis
+2024-11-22T08:24:37.495Z [INFO]: Database connected successfully!
+2024-11-22T08:24:58.941Z [INFO]: Server running on port 3200
+2024-11-22T08:24:58.987Z [INFO]: connected to redis
+2024-11-22T08:24:59.189Z [INFO]: Database connected successfully!
+2024-11-22T08:26:01.360Z [INFO]: Server running on port 3200
+2024-11-22T08:26:01.395Z [INFO]: connected to redis
+2024-11-22T08:26:01.587Z [INFO]: Database connected successfully!
+2024-11-22T08:26:27.051Z [INFO]: Server running on port 3200
+2024-11-22T08:26:27.062Z [INFO]: connected to redis
+2024-11-22T08:26:27.321Z [INFO]: Database connected successfully!
+2024-11-22T08:49:53.803Z [INFO]: Server running on port 3200
+2024-11-22T08:49:53.818Z [INFO]: connected to redis
+2024-11-22T08:49:54.107Z [INFO]: Database connected successfully!
