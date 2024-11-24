@@ -4,6 +4,7 @@ import logger from "./common/utils/logger";
 import apiUserRouter from "./users/userRoutes/userApiRoutes";
 import dotenv from 'dotenv';
 import { dbDetails } from "./common/db/DB_details";
+import apiBlogRoutes from "./blogs/blog-routes/blog-routes";
 dotenv.config();
 const app = express();
 
@@ -21,7 +22,7 @@ dbDetails.initialize()
 
 //router for all /api routes
 app.use('/api', apiUserRouter);
-
+app.use('/api',apiBlogRoutes);
 
 const apiPort = process.env.AppPort || 3200;
 app.listen(apiPort, () => {
