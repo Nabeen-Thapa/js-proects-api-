@@ -2,6 +2,7 @@ import "reflect-metadata";
 import { DataSource } from "typeorm";
 import { User } from "../../users/db/userTable";
 import { Tokens } from "../../users/db/tokenTable";
+import { userBlogs } from "../../blogs/db/blogTable";
 
 export const dbDetails = new DataSource({
     type:"postgres",
@@ -12,5 +13,5 @@ export const dbDetails = new DataSource({
     database: "typescript_userapi",
     synchronize: true,
     logging: false,
-    entities: [User, Tokens], // Path to entity files
+    entities: [User, Tokens, userBlogs], // Path to entity files
 })
