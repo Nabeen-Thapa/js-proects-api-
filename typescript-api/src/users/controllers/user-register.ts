@@ -3,10 +3,11 @@ import { StatusCodes } from "http-status-codes";
 import { User } from "../db/userTable";
 import logger from "../../common/utils/logger";
 import { dbDetails } from "../../common/db/DB_details";
-import nodeMailer from 'nodemailer';
 import bcrypt from 'bcrypt';
-import { authenticator } from 'otplib';
 import userValidation from "./user-validation";
+import { sendEmail } from "../utils/sendEmail";
+import { generateUniqueOtp } from "../utils/otpGenerator";
+
 const dataSource = dbDetails;
 const userRegister: Router = express.Router();
 
@@ -25,24 +26,6 @@ interface UserRegisterRequest {
   profileImage: any;
 }
 
-
-async function generateUniqueOtp(): Promise<string> {
-  let otp: string;
-  let userWithSameOtp: User | null;
-
-  // Get the user repository
-  const userRepository = dataSource.getRepository(User);
-
-  do {
-    otp = authenticator.generateSecret().slice(0, 4); // Generate a 4-digit OTP 
-    // Check if any user exists with the same OTP 
-    userWithSameOtp = await userRepository.findOne({
-      where: { password: otp }, // Change "password" to the field where OTP is stored
-    });
-  } while (userWithSameOtp); // Repeat if OTP exists
-
-  return otp;
-}
 
 //email validation regex
 const isValidEmail = (email: string): boolean => {
@@ -90,43 +73,26 @@ userRegister.post("/register", async (req: Request, res: Response): Promise<void
     const hashedPassword = await bcrypt.hash(otp, 10);
 
     //send email
-    const transporter = nodeMailer.createTransport({
-      service: 'Gmail',
-      auth: {
-        user: process.env.EMAIL,
-        pass: process.env.EMAIL_PASSWORD,
-      },
-    });
-    const mailOptions = {
-      to: email,
-      from: process.env.EMAIL,
-      subject: 'password reset',
-      text: `the password for your typescript api account.\n\n
-      your username:${username}\n
-      Your OTP is: ${otp}\n\n
-      Please use this OTP  to login or reset your password.\n`,
-    };
-    //send email with token
     try {
-      await transporter.sendMail(mailOptions);
-    } catch (emailError) {
-      console.error("Email sending error:", emailError);
-
-      // Check for specific email error conditions
-      if ((emailError as any).response) {
-        const response = (emailError as any).response;
-        if (response.includes('550') || response.includes('5.1.1')) {
-          res.status(StatusCodes.BAD_REQUEST).json({
-            message: `Address not found: The email ${email} is not valid.`,
-          });
-          return; // Exit early if the email is invalid
-        }
-      }
-      // If email sending failed, return a generic error message
-      res.status(StatusCodes.BAD_REQUEST).json({
-        message: "Failed to send email. Please check the email address and try again.",
+      await sendEmail({
+        to: email,
+        subject: "Password Reset",
+        text: `The password for your Typescript API account.\n\n
+        Your username: ${username}\n
+        Your OTP is: ${otp}\n\n
+        Please use this OTP to log in or reset your password.\n`,
       });
-      return; // Exit early
+    } catch (error) {
+      if (error instanceof Error) {
+        // Check if the error is an instance of Error
+        logger.error("Email sending failed:", error.message);
+        res.status(StatusCodes.BAD_REQUEST).json({ message: error.message });
+      } else {
+        // Handle non-Error cases (unlikely, but good practice)
+        logger.error("Unexpected email sending error:", error);
+        res.status(StatusCodes.INTERNAL_SERVER_ERROR).json({ message: "Unexpected error occurred while sending email." });
+      }
+      return;
     }
 
     // Create new user instance
