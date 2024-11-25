@@ -5,6 +5,7 @@ import { dbDetails } from "../../common/db/DB_details";
 import { userBlogs } from "../db/blogTable";
 import { User } from "../../users/db/userTable";
 import logger from "../../common/utils/logger";
+import { Tokens } from "../../users/db/tokenTable";
 
 
 const addBlog: Router = express.Router();
@@ -21,21 +22,28 @@ addBlog.post("/add-blog", async (req: Request, res: Response): Promise<void> => 
         const isUserRegistered = await accessUserTable.findOne({where : {username},});
         if(!isUserRegistered){
             res.status(StatusCodes.UNAUTHORIZED).json({ message: "you are not register, register first" });
-
         }
         //get userdata
         const userId = isUserRegistered?.userId;
         const userEmail = isUserRegistered?.email;
+        //check in redis
         const CheckUserInRedis = await redisClient.keys("username: *");
-        if (!CheckUserInRedis) {
+        if (CheckUserInRedis.length === 0) {
             res.status(StatusCodes.UNAUTHORIZED).json({ message: "you are not athorized ,login first" });
+            return;
         }
+        // const getTokenTable = await dbDetails.getRepository(Tokens);
+        // const isLoggedIn = await getTokenTable.findOne({ where: { username } });
+        // if (!isLoggedIn) {
+        //     res.status(StatusCodes.UNAUTHORIZED).json({ message: "you are not logged in" });
+        //     return;
+        // }
         const accessBlogTable = dbDetails.getRepository(userBlogs);
-        const isBlogSameUsername = await accessBlogTable.findOne({ where: { username } });
+        const isBlogSameUsername = await accessBlogTable.findOne({ where: { username, blogTitle: title } });
         const BlogUsername = isBlogSameUsername?.username;
         const blogTitle = isBlogSameUsername?.blogTitle;
-        if (BlogUsername && blogTitle) {
-            res.status(StatusCodes.BAD_REQUEST).json({ message: "blog title of provied user is already exist" });
+        if (isBlogSameUsername) {
+            res.status(StatusCodes.BAD_REQUEST).json({ message: "blog title of provied user is already exist"});
         }else{
             const newBlog = accessBlogTable.create({
                 userId :userId,
