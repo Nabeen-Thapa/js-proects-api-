@@ -371,3 +371,40 @@
 2024-11-25T03:30:00.797Z [INFO]: connected to redis
 2024-11-25T03:30:00.802Z [INFO]: connected to redis
 2024-11-25T03:30:00.984Z [INFO]: Database connected successfully!
+2024-11-25T09:10:18.756Z [INFO]: Server running on port 3200
+2024-11-25T09:10:18.778Z [INFO]: connected to redis
+2024-11-25T09:10:18.784Z [INFO]: connected to redis
+2024-11-25T09:10:19.835Z [INFO]: Database connected successfully!
+2024-11-25T09:11:57.630Z [ERROR]: Check register and login error:
+2024-11-25T09:16:12.582Z [INFO]: Server running on port 3200
+2024-11-25T09:16:12.608Z [INFO]: connected to redis
+2024-11-25T09:16:12.611Z [INFO]: connected to redis
+2024-11-25T09:16:13.469Z [INFO]: Database connected successfully!
+2024-11-25T09:16:20.854Z [ERROR]: Check register and login error:
+2024-11-25T09:17:42.884Z [ERROR]: Check register and login error:
+2024-11-25T09:18:07.702Z [ERROR]: Check register and login error:
+2024-11-25T09:21:33.163Z [INFO]: Server running on port 3200
+2024-11-25T09:21:33.186Z [INFO]: connected to redis
+2024-11-25T09:21:33.266Z [INFO]: connected to redis
+2024-11-25T09:21:34.554Z [INFO]: Database connected successfully!
+2024-11-25T09:21:39.286Z [ERROR]: Check register and login error:
+2024-11-25T09:21:55.738Z [ERROR]: Check register and login error:
+2024-11-25T11:48:32.880Z [INFO]: Server running on port 3200
+2024-11-25T11:48:32.898Z [INFO]: connected to redis
+2024-11-25T11:48:32.899Z [INFO]: connected to redis
+2024-11-25T11:48:34.986Z [INFO]: Database connected successfully!
+2024-11-25T11:51:08.387Z [ERROR]: Check register and login error:
+2024-11-25T11:52:02.936Z [ERROR]: Check register and login error:
+2024-11-25T11:54:31.940Z [INFO]: Server running on port 3200
+2024-11-25T11:54:32.005Z [INFO]: connected to redis
+2024-11-25T11:54:32.009Z [INFO]: connected to redis
+2024-11-25T11:54:32.634Z [INFO]: Database connected successfully!
+2024-11-25T11:56:31.312Z [INFO]: Server running on port 3200
+2024-11-25T11:56:31.333Z [INFO]: connected to redis
+2024-11-25T11:56:31.337Z [INFO]: connected to redis
+2024-11-25T11:56:31.902Z [INFO]: Database connected successfully!
+2024-11-25T11:57:01.999Z [INFO]: Server running on port 3200
+2024-11-25T11:57:02.015Z [INFO]: connected to redis
+2024-11-25T11:57:02.029Z [INFO]: connected to redis
+2024-11-25T11:57:02.303Z [INFO]: Database connected successfully!
+2024-11-25T11:57:10.885Z [ERROR]: Check register and login error:
