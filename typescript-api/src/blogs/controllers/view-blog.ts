@@ -16,17 +16,7 @@ viewBlog.post("/view-blog", async(req:Request, res:Response):Promise<void>=>{
     }
 
    try {
-    const isExistInRedis = await redisClient.keys(`username:${username}`);
-    if(isExistInRedis.length ===0){
-        const getUserTable = dbDetails.getRepository(User);
-        const isExistUsername = await getUserTable.findOne({where: {username}});
-        if(!isExistUsername){
-            res.status(StatusCodes.UNAUTHORIZED).json({message: "you are not registered in, register first"});
-            return;
-        }
-        res.status(StatusCodes.UNAUTHORIZED).json({message: "you are not logged in, login first"});
-        return;
-    }
+    
     const getTokenTable = dbDetails.getRepository(userBlogs);
     const isAddedBlogs =await  getTokenTable.findOne({where: {username},});
     if(!isAddedBlogs){
