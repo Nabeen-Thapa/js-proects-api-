@@ -354,3 +354,20 @@
 2024-11-24T16:34:40.054Z [INFO]: connected to redis
 2024-11-24T16:34:40.059Z [INFO]: connected to redis
 2024-11-24T16:34:40.314Z [INFO]: Database connected successfully!
+2024-11-25T03:26:36.143Z [INFO]: Server running on port 3200
+2024-11-25T03:26:36.190Z [INFO]: connected to redis
+2024-11-25T03:26:36.196Z [INFO]: connected to redis
+2024-11-25T03:26:36.663Z [INFO]: Database connected successfully!
+2024-11-25T03:26:40.944Z [ERROR]: add blog error: Cannot set headers after they are sent to the client
+2024-11-25T03:27:16.637Z [INFO]: Server running on port 3200
+2024-11-25T03:27:16.666Z [INFO]: connected to redis
+2024-11-25T03:27:16.674Z [INFO]: connected to redis
+2024-11-25T03:27:16.940Z [INFO]: Database connected successfully!
+2024-11-25T03:29:49.722Z [INFO]: Server running on port 3200
+2024-11-25T03:29:49.758Z [INFO]: connected to redis
+2024-11-25T03:29:49.769Z [INFO]: connected to redis
+2024-11-25T03:29:50.005Z [INFO]: Database connected successfully!
+2024-11-25T03:30:00.782Z [INFO]: Server running on port 3200
+2024-11-25T03:30:00.797Z [INFO]: connected to redis
+2024-11-25T03:30:00.802Z [INFO]: connected to redis
+2024-11-25T03:30:00.984Z [INFO]: Database connected successfully!
