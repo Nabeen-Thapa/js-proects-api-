@@ -408,3 +408,271 @@
 2024-11-25T11:57:02.029Z [INFO]: connected to redis
 2024-11-25T11:57:02.303Z [INFO]: Database connected successfully!
 2024-11-25T11:57:10.885Z [ERROR]: Check register and login error:
+2024-11-26T08:11:20.834Z [INFO]: Server running on port 3200
+2024-11-26T08:11:20.850Z [INFO]: connected to redis
+2024-11-26T08:11:20.854Z [INFO]: connected to redis
+2024-11-26T08:11:22.200Z [INFO]: Database connected successfully!
+2024-11-26T08:25:07.452Z [INFO]: Server running on port 3200
+2024-11-26T08:25:07.576Z [INFO]: connected to redis
+2024-11-26T08:25:07.755Z [INFO]: connected to redis
+2024-11-26T08:25:10.261Z [INFO]: Database connected successfully!
+2024-11-26T08:27:40.421Z [INFO]: Server running on port 3200
+2024-11-26T08:27:40.434Z [INFO]: connected to redis
+2024-11-26T08:27:40.439Z [INFO]: connected to redis
+2024-11-26T08:27:40.937Z [INFO]: Database connected successfully!
+2024-11-26T08:38:11.508Z [INFO]: Redis data for user removed successfully
+2024-11-26T08:52:47.779Z [INFO]: Server running on port 3200
+2024-11-26T08:52:47.805Z [INFO]: connected to redis
+2024-11-26T08:52:47.809Z [INFO]: connected to redis
+2024-11-26T08:52:48.452Z [INFO]: Database connected successfully!
+2024-11-26T08:54:32.385Z [INFO]: Server running on port 3200
+2024-11-26T08:54:32.440Z [INFO]: connected to redis
+2024-11-26T08:54:32.443Z [INFO]: connected to redis
+2024-11-26T08:54:32.886Z [INFO]: Database connected successfully!
+2024-11-26T08:55:01.411Z [INFO]: Server running on port 3200
+2024-11-26T08:55:01.432Z [INFO]: connected to redis
+2024-11-26T08:55:01.436Z [INFO]: connected to redis
+2024-11-26T08:55:02.040Z [INFO]: Database connected successfully!
+2024-11-26T08:55:43.645Z [INFO]: Server running on port 3200
+2024-11-26T08:55:43.665Z [INFO]: connected to redis
+2024-11-26T08:55:43.670Z [INFO]: connected to redis
+2024-11-26T08:55:44.302Z [INFO]: Database connected successfully!
+2024-11-26T08:55:58.067Z [INFO]: Server running on port 3200
+2024-11-26T08:55:58.082Z [INFO]: connected to redis
+2024-11-26T08:55:58.088Z [INFO]: connected to redis
+2024-11-26T08:55:58.316Z [INFO]: Database connected successfully!
+2024-11-26T09:00:47.066Z [INFO]: Server running on port 3200
+2024-11-26T09:00:47.113Z [INFO]: connected to redis
+2024-11-26T09:00:47.115Z [INFO]: connected to redis
+2024-11-26T09:00:47.671Z [INFO]: Database connected successfully!
+2024-11-26T10:03:10.773Z [INFO]: Server running on port 3200
+2024-11-26T10:03:10.788Z [INFO]: connected to redis
+2024-11-26T10:03:10.791Z [INFO]: connected to redis
+2024-11-26T10:03:13.971Z [INFO]: Database connected successfully!
+2024-11-26T11:23:31.971Z [INFO]: Server running on port 3200
+2024-11-26T11:23:31.995Z [INFO]: connected to redis
+2024-11-26T11:23:32.002Z [INFO]: connected to redis
+2024-11-26T11:23:32.326Z [INFO]: Database connected successfully!
+2024-11-26T11:28:58.858Z [INFO]: Server running on port 3200
+2024-11-26T11:28:58.869Z [INFO]: connected to redis
+2024-11-26T11:28:58.873Z [INFO]: connected to redis
+2024-11-26T11:28:59.129Z [INFO]: Database connected successfully!
+2024-11-26T11:32:07.748Z [INFO]: Server running on port 3200
+2024-11-26T11:32:07.761Z [INFO]: connected to redis
+2024-11-26T11:32:07.765Z [INFO]: connected to redis
+2024-11-26T11:32:07.942Z [INFO]: Database connected successfully!
+2024-11-26T11:37:15.150Z [INFO]: Server running on port 3200
+2024-11-26T11:37:15.163Z [INFO]: connected to redis
+2024-11-26T11:37:15.166Z [INFO]: connected to redis
+2024-11-26T11:37:15.485Z [INFO]: Database connected successfully!
+2024-11-26T11:37:21.014Z [INFO]: this user is logged
+2024-11-26T11:38:26.486Z [INFO]: Server running on port 3200
+2024-11-26T11:38:26.503Z [INFO]: connected to redis
+2024-11-26T11:38:26.508Z [INFO]: connected to redis
+2024-11-26T11:38:26.651Z [INFO]: Database connected successfully!
+2024-11-26T11:38:47.245Z [INFO]: Server running on port 3200
+2024-11-26T11:38:47.265Z [INFO]: connected to redis
+2024-11-26T11:38:47.271Z [INFO]: connected to redis
+2024-11-26T11:38:47.512Z [INFO]: Database connected successfully!
+2024-11-26T11:41:34.600Z [INFO]:  logged
+2024-11-26T11:42:38.914Z [INFO]: Server running on port 3200
+2024-11-26T11:42:38.928Z [INFO]: connected to redis
+2024-11-26T11:42:38.933Z [INFO]: connected to redis
+2024-11-26T11:42:39.108Z [INFO]: Database connected successfully!
+2024-11-26T11:43:45.520Z [INFO]:  logged
+2024-11-26T11:49:46.047Z [INFO]: Server running on port 3200
+2024-11-26T11:49:46.059Z [INFO]: connected to redis
+2024-11-26T11:49:46.064Z [INFO]: connected to redis
+2024-11-26T11:49:46.234Z [INFO]: Database connected successfully!
+2024-11-26T11:50:28.194Z [INFO]: Server running on port 3200
+2024-11-26T11:50:28.207Z [INFO]: connected to redis
+2024-11-26T11:50:28.252Z [INFO]: connected to redis
+2024-11-26T11:50:28.467Z [INFO]: Database connected successfully!
+2024-11-26T11:50:30.373Z [ERROR]: update user error: duplicate key value violates unique constraint "UQ_34071c8003531ced970246523e4"
+2024-11-26T11:51:35.941Z [INFO]: Server running on port 3200
+2024-11-26T11:51:35.954Z [INFO]: connected to redis
+2024-11-26T11:51:35.962Z [INFO]: connected to redis
+2024-11-26T11:51:36.116Z [INFO]: Database connected successfully!
+2024-11-26T11:51:37.881Z [ERROR]: update user error: null value in column "password" of relation "user_details" violates not-null constraint
+2024-11-26T11:52:15.167Z [INFO]: Server running on port 3200
+2024-11-26T11:52:15.204Z [INFO]: connected to redis
+2024-11-26T11:52:15.222Z [INFO]: connected to redis
+2024-11-26T11:52:15.487Z [INFO]: Database connected successfully!
+2024-11-26T11:52:20.979Z [ERROR]: update user error: duplicate key value violates unique constraint "UQ_34071c8003531ced970246523e4"
+2024-11-26T11:57:08.247Z [INFO]: Server running on port 3200
+2024-11-26T11:57:08.262Z [INFO]: connected to redis
+2024-11-26T11:57:08.271Z [INFO]: connected to redis
+2024-11-26T11:57:08.427Z [INFO]: Database connected successfully!
+2024-11-26T11:57:10.985Z [ERROR]: update user error: duplicate key value violates unique constraint "UQ_1c93ea34ca9f68d1248c3165558"
+2024-11-26T11:58:50.157Z [INFO]: Server running on port 3200
+2024-11-26T11:58:50.170Z [INFO]: connected to redis
+2024-11-26T11:58:50.176Z [INFO]: connected to redis
+2024-11-26T11:59:13.205Z [INFO]: Server running on port 3200
+2024-11-26T11:59:13.222Z [INFO]: connected to redis
+2024-11-26T11:59:13.236Z [INFO]: connected to redis
+2024-11-26T11:59:13.521Z [INFO]: Database connected successfully!
+2024-11-26T11:59:15.835Z [ERROR]: update user error: duplicate key value violates unique constraint "UQ_1c93ea34ca9f68d1248c3165558"
+2024-11-26T11:59:50.343Z [INFO]: Server running on port 3200
+2024-11-26T11:59:50.356Z [INFO]: connected to redis
+2024-11-26T11:59:50.364Z [INFO]: connected to redis
+2024-11-26T11:59:50.547Z [INFO]: Database connected successfully!
+2024-11-26T11:59:52.306Z [ERROR]: update user error: duplicate key value violates unique constraint "UQ_1c93ea34ca9f68d1248c3165558"
+2024-11-26T12:04:46.856Z [INFO]: Server running on port 3200
+2024-11-26T12:04:46.877Z [INFO]: connected to redis
+2024-11-26T12:04:46.880Z [INFO]: connected to redis
+2024-11-26T12:04:47.204Z [INFO]: Database connected successfully!
+2024-11-26T12:04:58.082Z [INFO]: Server running on port 3200
+2024-11-26T12:04:58.101Z [INFO]: connected to redis
+2024-11-26T12:04:58.105Z [INFO]: connected to redis
+2024-11-26T12:04:58.341Z [INFO]: Database connected successfully!
+2024-11-26T12:06:22.746Z [INFO]: Server running on port 3200
+2024-11-26T12:06:22.761Z [INFO]: connected to redis
+2024-11-26T12:06:22.765Z [INFO]: connected to redis
+2024-11-26T12:06:22.949Z [INFO]: Database connected successfully!
+2024-11-26T12:07:15.207Z [INFO]: Server running on port 3200
+2024-11-26T12:07:15.220Z [INFO]: connected to redis
+2024-11-26T12:07:15.225Z [INFO]: connected to redis
+2024-11-26T12:07:15.404Z [INFO]: Database connected successfully!
+2024-11-26T12:07:35.464Z [INFO]: Server running on port 3200
+2024-11-26T12:07:35.477Z [INFO]: connected to redis
+2024-11-26T12:07:35.483Z [INFO]: connected to redis
+2024-11-26T12:07:35.636Z [INFO]: Database connected successfully!
+2024-11-26T12:12:15.900Z [INFO]: Server running on port 3200
+2024-11-26T12:12:15.915Z [INFO]: connected to redis
+2024-11-26T12:12:15.929Z [INFO]: connected to redis
+2024-11-26T12:12:16.143Z [INFO]: Database connected successfully!
+2024-11-26T12:13:30.266Z [INFO]: Server running on port 3200
+2024-11-26T12:13:30.289Z [INFO]: connected to redis
+2024-11-26T12:13:30.293Z [INFO]: connected to redis
+2024-11-26T12:13:30.471Z [INFO]: Database connected successfully!
+2024-11-26T12:14:46.742Z [INFO]: Server running on port 3200
+2024-11-26T12:14:46.773Z [INFO]: connected to redis
+2024-11-26T12:14:46.776Z [INFO]: connected to redis
+2024-11-26T12:14:47.003Z [INFO]: Database connected successfully!
+2024-11-26T12:15:32.543Z [INFO]: Server running on port 3200
+2024-11-26T12:15:32.556Z [INFO]: connected to redis
+2024-11-26T12:15:32.563Z [INFO]: connected to redis
+2024-11-26T12:15:32.737Z [INFO]: Database connected successfully!
+2024-11-26T12:16:15.188Z [INFO]: Server running on port 3200
+2024-11-26T12:16:15.205Z [INFO]: connected to redis
+2024-11-26T12:16:15.209Z [INFO]: connected to redis
+2024-11-26T12:16:15.380Z [INFO]: Database connected successfully!
+2024-11-26T12:16:25.968Z [INFO]: Server running on port 3200
+2024-11-26T12:16:25.983Z [INFO]: connected to redis
+2024-11-26T12:16:25.990Z [INFO]: connected to redis
+2024-11-26T12:16:26.220Z [INFO]: Database connected successfully!
+2024-11-26T12:16:36.093Z [INFO]: Server running on port 3200
+2024-11-26T12:16:36.108Z [INFO]: connected to redis
+2024-11-26T12:16:36.113Z [INFO]: connected to redis
+2024-11-26T12:16:36.325Z [INFO]: Database connected successfully!
+2024-11-26T12:17:19.081Z [INFO]: Server running on port 3200
+2024-11-26T12:17:19.096Z [INFO]: connected to redis
+2024-11-26T12:17:19.105Z [INFO]: connected to redis
+2024-11-26T12:17:19.321Z [INFO]: Database connected successfully!
+2024-11-26T12:18:07.974Z [INFO]: Server running on port 3200
+2024-11-26T12:18:07.988Z [INFO]: connected to redis
+2024-11-26T12:18:07.995Z [INFO]: connected to redis
+2024-11-26T12:18:08.170Z [INFO]: Database connected successfully!
+2024-11-26T12:18:39.633Z [INFO]: Server running on port 3200
+2024-11-26T12:18:39.645Z [INFO]: connected to redis
+2024-11-26T12:18:39.652Z [INFO]: connected to redis
+2024-11-26T12:18:39.834Z [INFO]: Database connected successfully!
+2024-11-26T12:18:51.674Z [INFO]: Server running on port 3200
+2024-11-26T12:18:51.688Z [INFO]: connected to redis
+2024-11-26T12:18:51.696Z [INFO]: connected to redis
+2024-11-26T12:18:51.864Z [INFO]: Database connected successfully!
+2024-11-26T12:19:13.787Z [INFO]: Server running on port 3200
+2024-11-26T12:19:13.801Z [INFO]: connected to redis
+2024-11-26T12:19:13.807Z [INFO]: connected to redis
+2024-11-26T12:19:13.968Z [INFO]: Database connected successfully!
+2024-11-26T12:19:42.631Z [INFO]: Server running on port 3200
+2024-11-26T12:19:42.644Z [INFO]: connected to redis
+2024-11-26T12:19:42.660Z [INFO]: connected to redis
+2024-11-26T12:19:42.824Z [INFO]: Database connected successfully!
+2024-11-26T12:20:58.918Z [INFO]: Server running on port 3200
+2024-11-26T12:20:58.931Z [INFO]: connected to redis
+2024-11-26T12:20:58.937Z [INFO]: connected to redis
+2024-11-26T12:20:59.097Z [INFO]: Database connected successfully!
+2024-11-26T12:21:19.839Z [INFO]: Server running on port 3200
+2024-11-26T12:21:19.851Z [INFO]: connected to redis
+2024-11-26T12:21:19.856Z [INFO]: connected to redis
+2024-11-26T12:21:20.024Z [INFO]: Database connected successfully!
+2024-11-26T12:22:14.357Z [INFO]: Server running on port 3200
+2024-11-26T12:22:14.375Z [INFO]: connected to redis
+2024-11-26T12:22:14.387Z [INFO]: connected to redis
+2024-11-26T12:22:14.529Z [INFO]: Database connected successfully!
+2024-11-26T12:22:47.267Z [INFO]: Server running on port 3200
+2024-11-26T12:22:47.304Z [INFO]: connected to redis
+2024-11-26T12:22:47.311Z [INFO]: connected to redis
+2024-11-26T12:22:47.578Z [INFO]: Database connected successfully!
+2024-11-26T12:23:40.155Z [INFO]: Server running on port 3200
+2024-11-26T12:23:40.192Z [INFO]: connected to redis
+2024-11-26T12:23:40.200Z [INFO]: connected to redis
+2024-11-26T12:23:40.502Z [INFO]: Database connected successfully!
+2024-11-26T12:23:58.822Z [INFO]: Server running on port 3200
+2024-11-26T12:23:58.838Z [INFO]: connected to redis
+2024-11-26T12:23:58.844Z [INFO]: connected to redis
+2024-11-26T12:23:59.143Z [INFO]: Database connected successfully!
+2024-11-26T12:24:55.399Z [INFO]: Server running on port 3200
+2024-11-26T12:24:55.411Z [INFO]: connected to redis
+2024-11-26T12:24:55.415Z [INFO]: connected to redis
+2024-11-26T12:24:55.580Z [INFO]: Database connected successfully!
+2024-11-26T12:25:17.968Z [INFO]: Server running on port 3200
+2024-11-26T12:25:17.985Z [INFO]: connected to redis
+2024-11-26T12:25:17.988Z [INFO]: connected to redis
+2024-11-26T12:25:18.157Z [INFO]: Database connected successfully!
+2024-11-26T12:25:42.955Z [INFO]: Server running on port 3200
+2024-11-26T12:25:42.967Z [INFO]: connected to redis
+2024-11-26T12:25:42.973Z [INFO]: connected to redis
+2024-11-26T12:25:43.170Z [INFO]: Database connected successfully!
+2024-11-26T12:25:58.183Z [INFO]: Server running on port 3200
+2024-11-26T12:25:58.203Z [INFO]: connected to redis
+2024-11-26T12:25:58.207Z [INFO]: connected to redis
+2024-11-26T12:25:58.396Z [INFO]: Database connected successfully!
+2024-11-26T12:26:08.373Z [INFO]: Server running on port 3200
+2024-11-26T12:26:08.394Z [INFO]: connected to redis
+2024-11-26T12:26:08.400Z [INFO]: connected to redis
+2024-11-26T12:26:08.627Z [INFO]: Database connected successfully!
+2024-11-26T12:27:34.543Z [INFO]: Server running on port 3200
+2024-11-26T12:27:34.571Z [INFO]: connected to redis
+2024-11-26T12:27:34.576Z [INFO]: connected to redis
+2024-11-26T12:27:34.766Z [INFO]: Database connected successfully!
+2024-11-26T12:28:25.864Z [INFO]: Server running on port 3200
+2024-11-26T12:28:25.878Z [INFO]: connected to redis
+2024-11-26T12:28:25.885Z [INFO]: connected to redis
+2024-11-26T12:28:26.064Z [INFO]: Database connected successfully!
+2024-11-26T12:29:43.486Z [INFO]: Server running on port 3200
+2024-11-26T12:29:43.505Z [INFO]: connected to redis
+2024-11-26T12:29:43.508Z [INFO]: connected to redis
+2024-11-26T12:29:43.701Z [INFO]: Database connected successfully!
+2024-11-26T12:30:01.008Z [INFO]: Server running on port 3200
+2024-11-26T12:30:01.020Z [INFO]: connected to redis
+2024-11-26T12:30:01.024Z [INFO]: connected to redis
+2024-11-26T12:30:01.175Z [INFO]: Database connected successfully!
+2024-11-26T12:30:48.392Z [INFO]: Server running on port 3200
+2024-11-26T12:30:48.406Z [INFO]: connected to redis
+2024-11-26T12:30:48.413Z [INFO]: connected to redis
+2024-11-26T12:30:48.556Z [INFO]: Database connected successfully!
+2024-11-26T12:32:25.368Z [INFO]: Server running on port 3200
+2024-11-26T12:32:25.381Z [INFO]: connected to redis
+2024-11-26T12:32:25.386Z [INFO]: connected to redis
+2024-11-26T12:32:25.529Z [INFO]: Database connected successfully!
+2024-11-26T12:33:40.020Z [INFO]: Server running on port 3200
+2024-11-26T12:33:40.037Z [INFO]: connected to redis
+2024-11-26T12:33:40.040Z [INFO]: connected to redis
+2024-11-26T12:33:40.288Z [INFO]: Database connected successfully!
+2024-11-26T12:34:07.533Z [INFO]: Server running on port 3200
+2024-11-26T12:34:07.558Z [INFO]: connected to redis
+2024-11-26T12:34:07.573Z [INFO]: connected to redis
+2024-11-26T12:34:07.760Z [INFO]: Database connected successfully!
+2024-11-26T12:34:09.087Z [ERROR]: view user error: Cannot set headers after they are sent to the client
+2024-11-26T12:34:44.483Z [INFO]: Server running on port 3200
+2024-11-26T12:34:44.508Z [INFO]: connected to redis
+2024-11-26T12:34:44.528Z [INFO]: connected to redis
+2024-11-26T12:34:44.727Z [INFO]: Database connected successfully!
+2024-11-26T12:42:45.132Z [INFO]: No matching Redis key found for the provided token
+2024-11-26T12:43:29.708Z [ERROR]: Login error: Cannot set headers after they are sent to the client
+2024-11-26T12:44:15.278Z [INFO]: Server running on port 3200
+2024-11-26T12:44:15.290Z [INFO]: connected to redis
+2024-11-26T12:44:15.294Z [INFO]: connected to redis
+2024-11-26T12:44:15.469Z [INFO]: Database connected successfully!
