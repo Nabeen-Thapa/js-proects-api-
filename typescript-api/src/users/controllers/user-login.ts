@@ -33,7 +33,7 @@ userLogin.post('/login', async (req: Request, res: Response): Promise<void> => {
         //check data in redis 
         const isUserExistInRedis = await redisClient.get(`username:${username}`);
         if (isUserExistInRedis) {
-            res.status(StatusCodes.OK).json({ message: "already logged in ckecked from redis" });
+            res.status(StatusCodes.OK).json({ message: "you are already logged in" });
             return;
         } else {
             const getDatabase = dbDetails.getRepository(User);
