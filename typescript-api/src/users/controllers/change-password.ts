@@ -6,6 +6,7 @@ import bcrypt from 'bcrypt';
 import { Tokens } from '../../users/db/tokenTable';
 import logger from '../../common/utils/logger';
 import redisClient from '../../users/utils/redisClient';
+import { uploadLoggedInDataInRedis } from '../../common/utils/redis_data_upload';
 
 const changeUserPassowrd: Router = express.Router();
 
@@ -22,12 +23,17 @@ changeUserPassowrd.post('/change-password', async (req: Request, res: Response):
     }
     try {
         //check user logfed in or not
-        const getTokenTable = await dbDetails.getRepository(Tokens);
-        const isLoggedIn = await getTokenTable.findOne({ where: { username } });
+         const getTokenTable = dbDetails.getRepository(Tokens);
+         const isLoggedIn = await getTokenTable.findOne({ where: { username } });
         if (!isLoggedIn) {
             res.status(StatusCodes.UNAUTHORIZED).json({ message: "you are not logged in" });
             return;
         }
+        // const isUserLoggedIn = await uploadLoggedInDataInRedis(username);
+        // if (!isUserLoggedIn) {
+        //   res.status(StatusCodes.BAD_REQUEST).json({ message: "This user is not logged in." });
+        //   return;
+        // }
 
         //check user is registered or not
         const getUserDB = dbDetails.getRepository(User);
