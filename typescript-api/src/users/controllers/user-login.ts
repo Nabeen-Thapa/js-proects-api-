@@ -33,7 +33,7 @@ userLogin.post('/login', async (req: Request, res: Response): Promise<void> => {
     try {
         //check data in redis 
         const isUserLoggedIn = await uploadLoggedInDataInRedis(username);
-        if (!isUserLoggedIn) {
+        if (isUserLoggedIn) {
           res.status(StatusCodes.BAD_REQUEST).json({ message: "This user is not logged in." });
           return;
         } else {

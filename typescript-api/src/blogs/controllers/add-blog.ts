@@ -6,6 +6,7 @@ import { userBlogs } from "../db/blogTable";
 import { User } from "../../users/db/userTable";
 import logger from "../../common/utils/logger";
 import { Tokens } from "../../users/db/tokenTable";
+import { uploadLoggedInDataInRedis } from "../../common/utils/redis_data_upload";
 
 
 const addBlog: Router = express.Router();
@@ -27,10 +28,16 @@ addBlog.post("/add-blog", async (req: Request, res: Response): Promise<void> => 
         const userId = isUserRegistered?.userId;
         const userEmail = isUserRegistered?.email;
         //check in redis
-        const CheckUserInRedis = await redisClient.keys("username: *");
-        if (CheckUserInRedis.length === 0) {
-            res.status(StatusCodes.UNAUTHORIZED).json({ message: "you are not athorized ,login first" });
-            return;
+        // const CheckUserInRedis = await redisClient.keys("username: *");
+        // if (CheckUserInRedis.length === 0) {
+        //     res.status(StatusCodes.UNAUTHORIZED).json({ message: "you are not athorized ,login first" });
+        //     return;
+        // }
+
+        const isUserLoggedIn = await uploadLoggedInDataInRedis(username);
+        if (!isUserLoggedIn) {
+          res.status(StatusCodes.BAD_REQUEST).json({ message: "This user is not logged in." });
+          return;
         }
         // const getTokenTable = await dbDetails.getRepository(Tokens);
         // const isLoggedIn = await getTokenTable.findOne({ where: { username } });
