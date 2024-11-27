@@ -11,3 +11,10 @@
   "profileImage": null,
   "resetPasswordExpires": "2024-12-31T23:59:59.000Z"
 }
+
+
+{
+  "message": "login successfully",
+  "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik5hYmluMTIzIiwidXNlcklkIjoxNiwicGFzc3dvcmQiOiJOYWJpbjEyMyIsImlhdCI6MTczMjcwNjk1MywiZXhwIjoxNzMyNzEwNTUzfQ.tyfWURVek3Mld6e9sm_TbkE3wPdRrmrdqkoqaVzn5VI",
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ik5hYmluMTIzIiwidXNlcklkIjoxNiwicGFzc3dvcmQiOiJOYWJpbjEyMyIsImlhdCI6MTczMjcwNjk1M30.q57d5LE2brGPZC-B5XlC9M-d75UXhxesGUR5vvpFKPI"
+}

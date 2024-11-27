@@ -15,8 +15,7 @@ Database connected successfully!
 2024-11-20T16:23:26.975Z [INFO]: Request Body: 
 query: SELECT "User"."userId" AS "User_userId", "User"."name" AS "User_name", "User"."fullName" AS "User_fullName", "User"."username" AS "User_username", "User"."email" AS "User_email", "User"."password" AS "User_password", "User"."phone" AS "User_phone", "User"."age" AS "User_age", "User"."dateOfBirth" AS "User_dateOfBirth", "User"."profileImage" AS "User_profileImage", "User"."gender" AS "User_gender", "User"."resetPasswordExpires" AS "User_resetPasswordExpires", "User"."status" AS "User_status" FROM "user_details" "User" WHERE (("User"."email" = $1) AND ("User"."phone" = $2) AND ("User"."username" = $3)) LIMIT 1 -- PARAMETERS: ["nabeen2058@gmail.com","9845217529","Nabin123"]
 query: START TRANSACTION
-query: INSERT INTO "user_details"("name", "fullName", "username", "email", "password", "phone", "age", "dateOfBirth", "profileImage", "gender", "resetPasswordExpires", "status") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, DEFAULT, $9, DEFAULT, DEFAULT) RETURNING "userId", "status" -- PARAMETERS: ["Nabin","Nabin Thapa","Nabin123","nabeen2058@gmail.com","$2b$10$jvXeAg2BVpFn6PChof4ZGOXCFUMT08naPEkoMD0gHkdqdGfvN6xj.","9845217529",30,"1993-05-12","Male"]
-query: COMMIT
+
 
 INSERT INTO "user_table_console"("name", "FullName", "username", "email", "password", "phone", "DOB", "age", "img", "gender", "status") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, DEFAULT, $9, DEFAULT, DEFAULT) RETURNING "userId", "status" -- PARAMETERS: ["Nabin","Nabin Thapa","Nabin123","nabin@gmail.com","nabin123","9845217529","1993-05-12",30,"Male"];
 
@@ -37,3 +36,8 @@ status VARCHAR(20) DEFAULT 'active'
 );
 
 INSERT INTO "user_table_console" ("name", "fullname", "username", "email","password", "phone", "dob", "age", "img", "gender", "status") VALUES ('Nabin', 'Nabin Thapa', 'Nabin123', 'nabin@gmail.com', 'nabin123', '9845217529', '1993-05-12', 30, DEFAULT, 'Male', 'active')RETURNING "userid", "status";
+
+
+insert into user_table_console ("name", "fullname", "username", "email", "password", "phone", "dob", "age", "i
+mg", "gender", "status")VALUES ('ram', 'ram lal', 'ram123', 'ram@lal.com', 'ram123', '9876543212', '2000-11-20', '40', nu
+ll, 'Male', 'active');

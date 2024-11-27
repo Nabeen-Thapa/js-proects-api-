@@ -9,6 +9,7 @@ import bcrypt from 'bcrypt';
 import logger from "../../common/utils/logger";
 import { Tokens } from "../../users/db/tokenTable";
 import redisClient from "../../users/utils/redisClient";
+import { uploadLoggedInDataInRedis } from "../../common/utils/redis_data_upload";
 const userLogin: Router = express.Router();
 
 interface userLoginRequest {
@@ -31,10 +32,10 @@ userLogin.post('/login', async (req: Request, res: Response): Promise<void> => {
     }
     try {
         //check data in redis 
-        const isUserExistInRedis = await redisClient.get(`username:${username}`);
-        if (isUserExistInRedis) {
-            res.status(StatusCodes.OK).json({ message: "you are already logged in" });
-            return;
+        const isUserLoggedIn = await uploadLoggedInDataInRedis(username);
+        if (isUserLoggedIn) {
+          res.status(StatusCodes.BAD_REQUEST).json({ message: "This user is not logged in." });
+          return;
         } else {
             const getDatabase = dbDetails.getRepository(User);
             const isRegistered = await getDatabase.findOne({ where: { username }, });
