@@ -35,6 +35,7 @@ const isValidEmail = (email: string): boolean => {
 
 userRegister.post("/register", async (req: Request, res: Response): Promise<void> => {
   const { email, phone, username, name, fullName, age, dateOfBirth, profileImage, gender }: UserRegisterRequest = req.body;
+
   //user data validation using joi
   const { error } = userValidation.validate(req.body);
   if (error) {
