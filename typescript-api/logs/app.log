@@ -721,3 +721,16 @@
 2024-11-27T11:58:55.465Z [INFO]: connected to redis
 2024-11-27T11:58:55.470Z [INFO]: connected to redis
 2024-11-27T11:58:55.687Z [INFO]: Database connected successfully!
+2024-12-01T16:47:39.050Z [INFO]: Server running on port 3200
+2024-12-01T16:47:39.083Z [INFO]: connected to redis
+2024-12-01T16:47:39.095Z [INFO]: connected to redis
+2024-12-01T16:47:39.537Z [INFO]: Database connected successfully!
+2024-12-01T16:48:02.308Z [ERROR]: Email sending failed:
+2024-12-01T16:50:45.294Z [INFO]: Server running on port 3200
+2024-12-01T16:50:45.309Z [INFO]: connected to redis
+2024-12-01T16:50:45.318Z [INFO]: connected to redis
+2024-12-01T16:50:45.647Z [INFO]: Database connected successfully!
+2024-12-01T17:06:51.427Z [INFO]: Server running on port 3200
+2024-12-01T17:06:51.450Z [INFO]: connected to redis
+2024-12-01T17:06:51.455Z [INFO]: connected to redis
+2024-12-01T17:06:51.783Z [INFO]: Database connected successfully!
